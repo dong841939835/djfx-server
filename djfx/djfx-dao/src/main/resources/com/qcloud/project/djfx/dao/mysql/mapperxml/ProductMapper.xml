@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper  
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.qcloud.project.djfx.dao.mysql.mapper.ProductMapper">          
+    <select id="list4query" parameterType="java.util.HashMap" resultType="Product">  
+        select * from `djfx_product` 
+        <where>
+        	`state` = 0 
+        	<if test="productName != null">and `productName` like  CONCAT('%',#{productName},'%')</if>
+        </where>
+        limit #{start},#{count}
+    </select>  
+    
+    <select id="count4query" parameterType="java.util.HashMap" resultType="Integer">  
+        select count(*) from `djfx_product` 
+        <where>
+        	`state` = 0 
+        	<if test="productName != null">and `productName` like  CONCAT('%',#{productName},'%')</if>
+        </where>
+    </select> 
+</mapper>

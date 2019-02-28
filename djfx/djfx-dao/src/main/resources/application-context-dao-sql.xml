@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:cache="http://www.springframework.org/schema/cache" xmlns:pirates="http://www.qi-cloud.com/schema/pirates"
+	xsi:schemaLocation="  
+    http://www.springframework.org/schema/context  
+    http://www.springframework.org/schema/context/spring-context.xsd  
+    http://www.springframework.org/schema/beans  
+    http://www.springframework.org/schema/beans/spring-beans.xsd  
+    http://www.springframework.org/schema/tx  
+    http://www.springframework.org/schema/tx/spring-tx.xsd  
+    http://www.springframework.org/schema/jdbc  
+    http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd  
+    http://www.springframework.org/schema/cache  
+    http://www.springframework.org/schema/cache/spring-cache-3.1.xsd  
+    http://www.springframework.org/schema/aop  
+    http://www.springframework.org/schema/aop/spring-aop.xsd  
+    http://www.springframework.org/schema/util  
+    http://www.springframework.org/schema/util/spring-util.xsd
+    http://www.qi-cloud.com/schema/pirates 
+    http://www.qi-cloud.com/schema/pirates-0.1.xsd">
+
+	<pirates:sql-z id="sqlOperator-djfx" name="djfx" type="mybatis" mybatisMapper="com.qcloud.project.djfx.dao.mysql.mapper" modelPackage="com.qcloud.project.djfx.model" tx="true"></pirates:sql-z>
+	<!-- <pirates:sql-z id="sqlOperator-hire" name="hire" type="mybatis" mybatisMapper="com.qcloud.project.hire.dao.mysql.mapper" modelPackage="com.qcloud.project.hire.model" tx="true"></pirates:sql-z> -->
+	
+	<pirates:sql-z id="sqlOperator-pirates-autoId" name="djfx" type="mybatis" mybatisMapper="com.qcloud.component.autoid.dao.mysql.mapper" tx="true"></pirates:sql-z>
+	
+	<pirates:sql-z id="sqlOperator-parameter" name="djfx" type="mybatis" mybatisMapper="com.qcloud.component.parameter.dao.mysql.mapper" tx="true"></pirates:sql-z>
+	
+	<pirates:sql-z id="sqlOperator-permission" name="djfx" type="mybatis" mybatisMapper="com.qcloud.component.permission.dao.mysql.mapper" modelPackage="com.qcloud.component.permission.model" tx="true"></pirates:sql-z>
+	
+	<pirates:sql-z id="sqlOperator-pirates-admin" name="djfx" type="mybatis" mybatisMapper="com.qcloud.component.admin.dao.mysql.mapper" tx="true"></pirates:sql-z>
+	
+	<pirates:sql-z id="sqlOperator-pirates-autoId" name="djfx" type="mybatis" mybatisMapper="com.qcloud.component.autoid.dao.mysql.mapper" tx="true"></pirates:sql-z>
+	
+	<pirates:sql-z id="sqlOperator-parameter" name="djfx" type="mybatis" mybatisMapper="com.qcloud.component.parameter.dao.mysql.mapper" tx="true"></pirates:sql-z>
+
+	<pirates:sql-z id="sqlOperator-permission" name="djfx" type="mybatis" mybatisMapper="com.qcloud.component.permission.dao.mysql.mapper" modelPackage="com.qcloud.component.permission.model" tx="true"></pirates:sql-z>
+
+	<pirates:sql-z id="sqlOperator-pirates-admin" name="djfx" type="mybatis" mybatisMapper="com.qcloud.component.admin.dao.mysql.mapper" tx="true"></pirates:sql-z>
+
+	<pirates:sql-z id="sqlOperator-account" name="djfx" type="mybatis" mybatisMapper="com.qcloud.component.account.dao.mysql.mapper" modelPackage="com.qcloud.component.account.model" tx="true"></pirates:sql-z>
+
+	<pirates:sql-z id="sqlOperator-organization" name="djfx" type="mybatis" mybatisMapper="com.qcloud.component.organization.dao.mysql.mapper" modelPackage="com.qcloud.component.organization.model" tx="true"></pirates:sql-z>
+	
+	<pirates:sql-z id="sqlOperator-file" name="djfx" type="mybatis" mybatisMapper="com.qcloud.component.file.dao.mysql.mapper" modelPackage="com.qcloud.component.file.model" tx="true"></pirates:sql-z>
+
+	<pirates:sql-z id="sqlOperator-filestorage" name="djfx" type="mybatis" mybatisMapper="com.qcloud.component.filestorage.dao.mysql.mapper" modelPackage="com.qcloud.component.filestorage.model" tx="false"></pirates:sql-z>
+</beans>

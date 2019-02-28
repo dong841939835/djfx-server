@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper  
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.qcloud.project.djfx.dao.mysql.mapper.OrderMapper">          
+    <select id="list4query" parameterType="java.util.HashMap" resultType="Order">  
+        select * from `djfx_order` 
+        <where>
+	        <if test="state1 != null">`state` != #{state1} </if>
+	        <if test="searchState != null">and `processingState` = #{searchState}</if>
+	        <if test="startTime != null">and `createTime` &gt;= #{startTime}</if>
+	        <if test="endTime != null">and `createTime` &lt;= #{endTime}</if>
+	        <if test="oNumber != null">and `oNumber` like  CONCAT('%',#{oNumber},'%')</if>
+	        <if test="roleId != null">and `roleId` = #{roleId}</if>
+	        <if test="state3 != null">and `state` != #{state3}</if>
+	        <if test="searchState2 != null">and `state` = #{searchState2}</if>
+	        and `state` != -1
+        </where>
+        order by `createTime` desc
+        limit #{start},#{count}
+    </select>  
+    
+    <select id="count4query" parameterType="java.util.HashMap" resultType="Integer">  
+        select count(*) from `djfx_order` 
+        <where>
+	        <if test="state1 != null">`state` != #{state1} </if>
+	        <if test="searchState != null">and `processingState` = #{searchState}</if>
+	        <if test="startTime != null">and `createTime` &gt;= #{startTime}</if>
+	        <if test="endTime != null">and `createTime` &lt;= #{endTime}</if>
+	        <if test="oNumber != null">and `oNumber` like  CONCAT('%',#{oNumber},'%')</if>
+	        <if test="roleId != null">and `roleId` = #{roleId}</if>
+	        <if test="state3 != null">and `state` != #{state3}</if>
+	        <if test="searchState2 != null">and `state` = #{searchState2}</if>
+	        and `state` != -1
+        </where>
+    </select> 
+</mapper>

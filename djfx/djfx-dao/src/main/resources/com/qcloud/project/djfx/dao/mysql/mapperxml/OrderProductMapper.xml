@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper  
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.qcloud.project.djfx.dao.mysql.mapper.OrderProductMapper">          
+    <select id="list4query" parameterType="java.util.HashMap" resultType="OrderProduct">  
+        select DISTINCT a.* from `djfx_order_product` a ,`djfx_order` b
+        <where>
+        	a.orderId = b.oNumber
+	        <if test="state != null and '' != state"> and b.processingState = #{state}</if>
+    	</where>
+        order by a.`id` desc limit #{start},#{count}
+    </select>  
+    
+    <select id="count4query" parameterType="java.util.HashMap" resultType="Integer">  
+        select COUNT(DISTINCT a.orderId) from `djfx_order_product` a ,`djfx_order` b
+        <where>
+        	a.orderId = b.oNumber
+	        <if test="state != null and '' != state"> and b.processingState = #{state}</if>
+    	</where>
+    	order by a.`id`
+    </select> 
+    
+    <!-- <select id="count4export" parameterType="java.util.HashMap" resultType="Integer">  
+        select COUNT(DISTINCT a.orderId) from `djfx_order_product` a ,`djfx_order` b
+        <where>
+        	a.orderId = b.oNumber
+	        <if test="state != null and '' != state"> and b.processingState = #{state}</if>
+    	</where>
+    </select> -->
+    
+    <select id="getByOrderId" parameterType="java.lang.Long" resultType="OrderProduct">  
+        select * from `djfx_order_product` where `orderId` = #{orderId}
+    </select>
+    
+</mapper>

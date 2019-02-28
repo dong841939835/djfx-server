@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 根节点的名字必须是xml -->
+<xml>
+	<!-- 可以配置多个module-list,code属性不能为空,不能重复,系统发现重复,会后来者居上 -->
+	<!--<module-list code="DEMO1">
+		一个module-list可以配置多个item,item的属性和text自定义,xml能解析到这层的属性和值	
+		<item attr1="value1" attr2="2">text1</item>
+		<item attr1="value2" attr2="4">text2</item>
+		<item attr1="value3" attr2="6">text3</item>
+	</module-list>
+	<module-list code="DEMO2">
+		<item attr1="L" attr2="O" attr3="X">textOne</item>
+		<item attr1="M" attr2="P" attr3="Y">textTwo</item>
+		<item attr1="N" attr2="Q" attr3="Z">textThree</item>
+	</module-list> -->
+	
+	<!-- 可以配置多个module-list,code属性不能为空,不能重复,系统发现重复,会后来者居上 -->
+    <module-list code="loginIndex">
+        <item name="loginLogo">/qcloud-admin/assets/images/logo.png</item>
+        <item name="loginMessage">©xxx项目</item>
+        <item name="width">180</item>
+        <item name="height">150</item>
+    </module-list>
+
+    <module-list code="pirates-file-service-mode">
+        <item>sdk</item>
+        <!--<item>service</item>-->
+    </module-list>
+
+    <!--begin of 唯一编码设置 -->
+    <module-list code="qi-cloud-UniqueCodeGeneratorConfig">
+        <item>organization-org-code</item>
+        <item>organization-clerk-code</item>
+    </module-list>
+
+    <module-list code="organization-org-code">
+        <item type="random">000000</item>
+    </module-list>
+
+    <module-list code="organization-clerk-code">
+        <item type="random">00000000</item>
+    </module-list>
+
+    <module-list code="clerk-default-password">
+        <item key="pwd">888</item>
+    </module-list>
+</xml>

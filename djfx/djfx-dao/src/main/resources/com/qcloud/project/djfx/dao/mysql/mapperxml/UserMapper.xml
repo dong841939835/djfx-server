@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper  
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.qcloud.project.djfx.dao.mysql.mapper.UserMapper">          
+    <select id="list4query" parameterType="java.util.HashMap" resultType="User">  
+   		select a.* from `djfx_user` a,`djfx_userCategory` b 
+   		<where>
+   			a.roleCategoryId = b.id and state = 0
+   			<if test="superiorId != null">and superiorId = #{superiorId}</if>
+   		</where>
+   		ORDER BY  b.type , a.superiorId  ASC LIMIT #{start},#{count}
+    </select>  
+    
+    <select id="count4query" parameterType="java.util.HashMap" resultType="Integer">  
+        select count(*) from `djfx_user` 
+        <where>
+   			state = 0
+   			<if test="superiorId != null">and superiorId = #{superiorId}</if>
+   		</where>
+    </select> 
+    
+    <select id="getByUserName" parameterType="java.lang.String" resultType="User">  
+        select * from `djfx_user` where `state` = 0 and `userName` = #{userName}
+    </select> 
+    
+    <select id="getBysuperiorId" parameterType="java.lang.Long" resultType="User">  
+        select * from `djfx_user` where `state` = 0 and `superiorId` = #{superiorId}
+    </select> 
+</mapper>

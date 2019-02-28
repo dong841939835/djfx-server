@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper  
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.qcloud.project.djfx.dao.mysql.mapper.StockMapper">          
+    <select id="list4query" parameterType="java.util.HashMap" resultType="Stock">  
+        select * from `djfx_stock` where sState != -9 
+        <if test="roleId != null">and `roleId` = #{roleId}</if>
+        limit #{start},#{count}
+    </select>  
+    
+    <select id="count4query" parameterType="java.util.HashMap" resultType="Integer">  
+        select count(*) from `djfx_stock` where sState != -9
+        <if test="roleId != null">and `roleId` = #{roleId}</if>
+    </select>
+    
+    <!-- <select id="listByProductId" parameterType="java.lang.Long" resultType="java.util.List">  
+        select * from `djfx_stock` where productId = #{productId}
+    </select>  -->
+    <select id="getByRoleAndPro" parameterType="java.util.HashMap" resultType="Stock">  
+        select * from `djfx_stock` where sState != -9 and roleId = #{roleId} and productId = #{productId}
+    </select>
+</mapper>

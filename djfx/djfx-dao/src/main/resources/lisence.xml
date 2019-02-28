@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 根节点的名字必须是xml -->
+<xml>
+	<module-list code="pirates-framework-lisence">
+		<item project="djfx">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHhtbD4KPG1vZHVsZS1saXN0IGNvZGU9InBpcmF0ZXMtbGlzZW5jZSI+CjxpdGVtIG5hbWU9InByb2plY3QiIHZhbHVlPSJkamZ4Ij7lpJrnuqfliIbplIA8L2l0ZW0+CjxpdGVtIG5hbWU9ImRhdGUiIHZhbHVlPSIyMDk5LTEyLTMxIDIzOjU5OjU5Ij7mnInmlYjmnJ88L2l0ZW0+CjwvbW9kdWxlLWxpc3Q+CjwveG1sPg==</item>
+	</module-list>
+</xml>
